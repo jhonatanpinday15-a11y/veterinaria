@@ -290,7 +290,6 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Pantalla de código OTP oculta por defecto */
         .verification-section {
             display: none;
             text-align: center;
@@ -335,7 +334,7 @@
             <svg class="paw" viewBox="0 0 512 512"><path d="M256,224c-35.3,0-64,28.7-64,64s28.7,64,64,64s64-28.7,64-64S291.3,224,256,224z M144,144c-26.5,0-48,21.5-48,48 s21.5,48,48,48s48-21.5,48-48S170.5,144,144,144z M368,144c-26.5,0-48,21.5-48,48s21.5,48,48,48s48-21.5,48-48S394.5,144,368,144z M96,288 c-22.1,0-40,17.9-40,40s17.9,40,40,40s40-17.9,40-40S118.1,288,96,288z M416,288c-22.1,0-40,17.9-40,40s17.9,40,40,40 s40-17.9,40-40S438.1,288,416,288z"/></svg>
         </div>
 
-        <!-- VISTA 1: Formulario principal (Login/Registro) -->
+        <!-- VISTA 1: Formulario principal -->
         <div id="mainLoginView">
             <div class="header">
                 <span class="brand-badge">Clínica Veterinaria</span>
@@ -379,7 +378,7 @@
             </div>
         </div>
 
-        <!-- VISTA 2: Verificación de código OTP (Enviado al correo) -->
+        <!-- VISTA 2: Verificación de código OTP -->
         <div id="otpVerificationView" class="verification-section">
             <div class="header">
                 <span class="brand-badge">Seguridad OTP</span>
@@ -401,7 +400,7 @@
         </div>
     </div>
 
-    <!-- Script de Firebase y lógica de autenticación segura -->
+    <!-- Script de Firebase -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
@@ -421,7 +420,7 @@
 
         let codigoGeneradoReal = "";
 
-        // Botón de Google (Ingresa directamente sin OTP por ser autenticación de confianza de Google)
+        // Botón Google
         document.getElementById('googleLoginBtn').addEventListener('click', async () => {
             try {
                 await signInWithPopup(auth, googleProvider);
@@ -431,18 +430,16 @@
             }
         });
 
-        // Formulario de Correo (Valida credenciales y dispara el código OTP)
+        // Formulario de Correo
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
 
             try {
-                // Intentar iniciar sesión si ya existe
                 await signInWithEmailAndPassword(auth, email, password);
                 iniciarProcesoOTP();
             } catch (error) {
-                // Si el usuario no existe, creamos la cuenta automáticamente
                 if (error.code === 'auth/user-not-found' || error.code === 'auth/invalid-credential' || error.code === 'auth/invalid-email') {
                     try {
                         await createUserWithEmailAndPassword(auth, email, password);
@@ -458,19 +455,14 @@
         });
 
         function iniciarProcesoOTP() {
-            // Generar código aleatorio de 6 dígitos simulado para validación segura
             codigoGeneradoReal = Math.floor(100000 + Math.random() * 900000).toString();
-            
-            // Mostrar alerta simulando el envío real a su correo
             alert(`[SIMULACIÓN DE CORREO] Tu código de verificación de acceso es: ${codigoGeneradoReal}`);
 
-            // Cambiar a la vista de los 6 inputs del código
             document.getElementById('mainLoginView').style.display = 'none';
             document.getElementById('otpVerificationView').style.display = 'block';
             document.getElementById('otp1').focus();
         }
 
-        // Lógica automática para navegar entre los cuadritos del código OTP
         const otpInputs = document.querySelectorAll('.otp-input');
         otpInputs.forEach((input, index) => {
             input.addEventListener('input', (e) => {
@@ -485,7 +477,6 @@
             });
         });
 
-        // Validar el código ingresado por el usuario
         document.getElementById('verifyOtpBtn').addEventListener('click', () => {
             let codigoIngresado = "";
             otpInputs.forEach(input => codigoIngresado += input.value);
@@ -498,7 +489,6 @@
             }
         });
 
-        // Reenviar código
         document.getElementById('resendOtp').addEventListener('click', (e) => {
             e.preventDefault();
             alert(`[REENVÍO] Tu nuevo código es: ${codigoGeneradoReal}`);
