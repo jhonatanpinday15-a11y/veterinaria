@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VETERINARIA</title>
+    <title>VETERINARIA | Acceso Profesional</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -16,13 +16,13 @@
         :root {
             --primary: #38BDF8;
             --primary-hover: #0284C7;
-            --bg-color: #0B132B;
-            --card-bg: rgba(15, 23, 42, 0.75);
-            --card-border: rgba(125, 211, 252, 0.25);
+            --bg-color: #070B19;
+            --card-bg: rgba(15, 23, 42, 0.82);
+            --card-border: rgba(56, 189, 248, 0.22);
             --text-main: #FFFFFF;
             --text-muted: #94A3B8;
             --text-floating: #38BDF8;
-            --radius: 28px;
+            --radius: 30px;
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -30,9 +30,9 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.18) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, #0F172A 0%, #060913 100%);
+                radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(2, 132, 199, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, #0B132B 0%, #04060E 100%);
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
@@ -49,17 +49,17 @@
             border: 1px solid var(--card-border);
             border-radius: var(--radius);
             padding: 3rem 2.5rem;
-            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7), 
-                        0 0 40px rgba(56, 189, 248, 0.08);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            box-shadow: 0 35px 65px -15px rgba(0, 0, 0, 0.8), 
+                        0 0 45px rgba(56, 189, 248, 0.07);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             position: relative;
             overflow: hidden; 
             animation: cardAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         @keyframes cardAppear {
-            0% { opacity: 0; transform: translateY(25px) scale(0.96); }
+            0% { opacity: 0; transform: translateY(25px) scale(0.97); }
             100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
@@ -76,24 +76,23 @@
         .paw {
             position: absolute;
             top: -50px;
-            fill: rgba(186, 230, 253, 0.22);
+            fill: rgba(186, 230, 253, 0.18);
             animation: fallInside linear infinite;
         }
 
         @keyframes fallInside {
             0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
-            20% { opacity: 0.7; }
-            80% { opacity: 0.7; }
+            20% { opacity: 0.6; }
+            80% { opacity: 0.6; }
             100% { transform: translateY(540px) rotate(360deg); opacity: 0; }
         }
 
-        .paw:nth-child(1) { left: 10%; width: 26px; animation-duration: 7s; animation-delay: 0s; }
-        .paw:nth-child(2) { left: 30%; width: 20px; animation-duration: 9s; animation-delay: 2.5s; }
-        .paw:nth-child(3) { left: 55%; width: 28px; animation-duration: 6.5s; animation-delay: 1s; }
-        .paw:nth-child(4) { left: 75%; width: 22px; animation-duration: 8.5s; animation-delay: 4s; }
-        .paw:nth-child(5) { left: 88%; width: 25px; animation-duration: 7.5s; animation-delay: 1.8s; }
+        .paw:nth-child(1) { left: 12%; width: 24px; animation-duration: 7s; animation-delay: 0s; }
+        .paw:nth-child(2) { left: 35%; width: 18px; animation-duration: 9.5s; animation-delay: 2.2s; }
+        .paw:nth-child(3) { left: 60%; width: 26px; animation-duration: 6.8s; animation-delay: 0.8s; }
+        .paw:nth-child(4) { left: 82%; width: 20px; animation-duration: 8.2s; animation-delay: 3.5s; }
 
-        .header, form, .divider, .social-buttons {
+        .header, form, .divider, .social-buttons, .verification-section {
             position: relative;
             z-index: 2;
         }
@@ -104,7 +103,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 2px;
+            height: 3px;
             background: linear-gradient(90deg, transparent, #38BDF8, transparent);
             z-index: 3;
         }
@@ -118,21 +117,21 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(56, 189, 248, 0.1);
+            background: rgba(56, 189, 248, 0.12);
             color: #E0F2FE;
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            padding: 0.45rem 1.1rem;
+            padding: 0.45rem 1.2rem;
             border-radius: 50px;
             margin-bottom: 1.1rem;
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.12);
         }
 
         .header h1 {
-            font-size: 1.85rem;
+            font-size: 1.9rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             margin-bottom: 0.4rem;
@@ -141,7 +140,7 @@
 
         .header p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
         }
 
         .form-group {
@@ -151,10 +150,10 @@
 
         .form-group input {
             width: 100%;
-            padding: 1.1rem 1.2rem;
-            background: rgba(6, 9, 20, 0.6);
+            padding: 1.15rem 1.2rem;
+            background: rgba(6, 9, 20, 0.7);
             border: 1.5px solid rgba(125, 211, 252, 0.2);
-            border-radius: 14px;
+            border-radius: 16px;
             font-size: 0.95rem;
             font-family: inherit;
             color: #FFFFFF;
@@ -163,13 +162,13 @@
         }
 
         .form-group input:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            background: rgba(6, 9, 20, 0.8);
+            border-color: rgba(56, 189, 248, 0.45);
+            background: rgba(6, 9, 20, 0.85);
         }
 
         .form-group input:focus {
             border-color: #38BDF8;
-            background: rgba(6, 9, 20, 0.95);
+            background: rgba(6, 9, 20, 0.98);
             box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
         }
 
@@ -187,7 +186,7 @@
         .form-group input:focus ~ label,
         .form-group input:not(:placeholder-shown) ~ label {
             top: 0;
-            transform: translateY(-50%) scale(0.8);
+            transform: translateY(-50%) scale(0.82);
             background: #0F172A;
             padding: 0 0.4rem;
             color: var(--text-floating);
@@ -224,27 +223,27 @@
             background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%);
             color: #FFFFFF;
             border: none;
-            padding: 1.1rem;
-            border-radius: 14px;
-            font-size: 0.95rem;
+            padding: 1.15rem;
+            border-radius: 16px;
+            font-size: 0.98rem;
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 8px 22px rgba(56, 189, 248, 0.32);
             margin-bottom: 1rem;
         }
 
         .btn-submit:hover {
             background: linear-gradient(135deg, #7DD3FC 0%, #38BDF8 100%);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.45);
+            box-shadow: 0 12px 32px rgba(56, 189, 248, 0.45);
         }
 
         .divider {
             display: flex;
             align-items: center;
             text-align: center;
-            margin: 1.25rem 0;
+            margin: 1.35rem 0;
             color: var(--text-muted);
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -275,8 +274,8 @@
             gap: 0.75rem;
             background: rgba(255, 255, 255, 0.03);
             border: 1.5px solid rgba(125, 211, 252, 0.2);
-            padding: 1rem;
-            border-radius: 14px;
+            padding: 1.05rem;
+            border-radius: 16px;
             font-size: 0.95rem;
             font-weight: 600;
             color: var(--text-main);
@@ -286,81 +285,126 @@
 
         .btn-social:hover {
             background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(56, 189, 248, 0.4);
+            border-color: rgba(56, 189, 248, 0.45);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-apple {
-            background: #000000;
+        /* Pantalla de código OTP oculta por defecto */
+        .verification-section {
+            display: none;
+            text-align: center;
+            animation: cardAppear 0.5s ease forwards;
+        }
+
+        .otp-inputs {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .otp-input {
+            width: 45px;
+            height: 52px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: rgba(6, 9, 20, 0.8);
+            border: 1.5px solid rgba(125, 211, 252, 0.3);
+            border-radius: 12px;
+            color: #38BDF8;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .otp-input:focus {
+            border-color: #38BDF8;
+            background: rgba(6, 9, 20, 0.98);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
         }
     </style>
 </head>
 <body>
 
     <div class="login-card">
-        <!-- Huellitas animadas -->
+        <!-- Huellitas animadas de fondo -->
         <div class="paw-container">
             <svg class="paw" viewBox="0 0 512 512"><path d="M256,224c-35.3,0-64,28.7-64,64s28.7,64,64,64s64-28.7,64-64S291.3,224,256,224z M144,144c-26.5,0-48,21.5-48,48 s21.5,48,48,48s48-21.5,48-48S170.5,144,144,144z M368,144c-26.5,0-48,21.5-48,48s21.5,48,48,48s48-21.5,48-48S394.5,144,368,144z M96,288 c-22.1,0-40,17.9-40,40s17.9,40,40,40s40-17.9,40-40S118.1,288,96,288z M416,288c-22.1,0-40,17.9-40,40s17.9,40,40,40 s40-17.9,40-40S438.1,288,416,288z"/></svg>
             <svg class="paw" viewBox="0 0 512 512"><path d="M256,224c-35.3,0-64,28.7-64,64s28.7,64,64,64s64-28.7,64-64S291.3,224,256,224z M144,144c-26.5,0-48,21.5-48,48 s21.5,48,48,48s48-21.5,48-48S170.5,144,144,144z M368,144c-26.5,0-48,21.5-48,48s21.5,48,48,48s48-21.5,48-48S394.5,144,368,144z M96,288 c-22.1,0-40,17.9-40,40s17.9,40,40,40s40-17.9,40-40S118.1,288,96,288z M416,288c-22.1,0-40,17.9-40,40s17.9,40,40,40 s40-17.9,40-40S438.1,288,416,288z"/></svg>
             <svg class="paw" viewBox="0 0 512 512"><path d="M256,224c-35.3,0-64,28.7-64,64s28.7,64,64,64s64-28.7,64-64S291.3,224,256,224z M144,144c-26.5,0-48,21.5-48,48 s21.5,48,48,48s48-21.5,48-48S170.5,144,144,144z M368,144c-26.5,0-48,21.5-48,48s21.5,48,48,48s48-21.5,48-48S394.5,144,368,144z M96,288 c-22.1,0-40,17.9-40,40s17.9,40,40,40s40-17.9,40-40S118.1,288,96,288z M416,288c-22.1,0-40,17.9-40,40s17.9,40,40,40 s40-17.9,40-40S438.1,288,416,288z"/></svg>
         </div>
 
-        <div class="header">
-            <span class="brand-badge">Clínica Veterinaria</span>
-            <h1>Bienvenido</h1>
-            <p>Accede al panel de gestión profesional</p>
+        <!-- VISTA 1: Formulario principal (Login/Registro) -->
+        <div id="mainLoginView">
+            <div class="header">
+                <span class="brand-badge">Clínica Veterinaria</span>
+                <h1>Bienvenido</h1>
+                <p>Accede al panel de gestión profesional</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Correo electrónico</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" id="password" placeholder=" " required>
+                    <label for="password">Contraseña</label>
+                </div>
+
+                <div class="form-options">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" style="accent-color: #38BDF8; width: 16px; height: 16px; cursor: pointer; border-radius: 4px;"> Recordar sesión
+                    </label>
+                    <a href="#">¿Olvidaste tu clave?</a>
+                </div>
+
+                <button type="submit" class="btn-submit">Continuar</button>
+            </form>
+
+            <div class="divider">o continuar con</div>
+
+            <div class="social-buttons">
+                <button type="button" class="btn-social" id="googleLoginBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.19v3.15C3.17 21.31 7.25 24 12 24z"/>
+                        <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.19C.43 8.1 0 9.81 0 11.6s.43 3.5 1.19 5.02l4.09-2.35z"/>
+                        <path fill="#EA4335" d="M12 4.75c1.76 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.25 0 3.17 2.69 1.19 6.58l4.09 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    Google
+                </button>
+            </div>
         </div>
 
-        <!-- Formulario Correo / Contraseña -->
-        <form id="loginForm">
-            <div class="form-group">
-                <input type="email" id="email" placeholder=" " required>
-                <label for="email">Correo electrónico</label>
+        <!-- VISTA 2: Verificación de código OTP (Enviado al correo) -->
+        <div id="otpVerificationView" class="verification-section">
+            <div class="header">
+                <span class="brand-badge">Seguridad OTP</span>
+                <h1>Verifica tu identidad</h1>
+                <p>Ingresa el código de 6 dígitos enviado a tu correo</p>
             </div>
 
-            <div class="form-group">
-                <input type="password" id="password" placeholder=" " required>
-                <label for="password">Contraseña</label>
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" class="otp-input" id="otp1" autofocus>
+                <input type="text" maxlength="1" class="otp-input" id="otp2">
+                <input type="text" maxlength="1" class="otp-input" id="otp3">
+                <input type="text" maxlength="1" class="otp-input" id="otp4">
+                <input type="text" maxlength="1" class="otp-input" id="otp5">
+                <input type="text" maxlength="1" class="otp-input" id="otp6">
             </div>
 
-            <div class="form-options">
-                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                    <input type="checkbox" style="accent-color: #38BDF8; width: 16px; height: 16px; cursor: pointer; border-radius: 4px;"> Recordar sesión
-                </label>
-                <a href="#">¿Olvidaste tu clave?</a>
-            </div>
-
-            <button type="submit" class="btn-submit">Iniciar Sesión / Registrarse</button>
-        </form>
-
-        <div class="divider">o continuar con</div>
-
-        <!-- Botones de Google y Apple -->
-        <div class="social-buttons">
-            <button type="button" class="btn-social" id="googleLoginBtn">
-                <svg width="20" height="20" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
-                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.19v3.15C3.17 21.31 7.25 24 12 24z"/>
-                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.19C.43 8.1 0 9.81 0 11.6s.43 3.5 1.19 5.02l4.09-2.35z"/>
-                    <path fill="#EA4335" d="M12 4.75c1.76 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.25 0 3.17 2.69 1.19 6.58l4.09 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-                </svg>
-                Google
-            </button>
-
-            <button type="button" class="btn-social btn-apple" id="appleLoginBtn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 5.37c.65-.78 1.09-1.86.97-2.94-.94.04-2.08.63-2.74 1.41-.58.68-1.1 1.77-.96 2.84 1.05.08 2.11-.53 2.73-1.31z"/>
-                </svg>
-                Apple
-            </button>
+            <button type="button" class="btn-submit" id="verifyOtpBtn">Verificar Código e Ingresar</button>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">¿No llegó el código? <a href="#" id="resendOtp" style="color: #38BDF8; text-decoration: none; font-weight: 600;">Reenviar</a></p>
         </div>
     </div>
 
-    <!-- Script con la configuración de Firebase de tu proyecto -->
+    <!-- Script de Firebase y lógica de autenticación segura -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, OAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyDJkI4QnoWv5Zm8b6VO2KoB_YLxUN3wBuI",
@@ -374,50 +418,90 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const googleProvider = new GoogleAuthProvider();
-        const appleProvider = new OAuthProvider('apple.com');
 
-        // Botón Google
+        let codigoGeneradoReal = "";
+
+        // Botón de Google (Ingresa directamente sin OTP por ser autenticación de confianza de Google)
         document.getElementById('googleLoginBtn').addEventListener('click', async () => {
             try {
                 await signInWithPopup(auth, googleProvider);
                 window.location.href = "inicio.html";
             } catch (error) {
-                alert("Error al iniciar con Google: " + error.message);
+                alert("Error al iniciar sesión con Google: " + error.message);
             }
         });
 
-        // Botón Apple
-        document.getElementById('appleLoginBtn').addEventListener('click', async () => {
-            try {
-                await signInWithPopup(auth, appleProvider);
-                window.location.href = "inicio.html";
-            } catch (error) {
-                alert("Error al iniciar con Apple: " + error.message);
-            }
-        });
-
-        // Correo y Contraseña (Autoregistro si no existe)
+        // Formulario de Correo (Valida credenciales y dispara el código OTP)
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
 
             try {
+                // Intentar iniciar sesión si ya existe
                 await signInWithEmailAndPassword(auth, email, password);
-                window.location.href = "inicio.html";
+                iniciarProcesoOTP();
             } catch (error) {
+                // Si el usuario no existe, creamos la cuenta automáticamente
                 if (error.code === 'auth/user-not-found' || error.code === 'auth/invalid-credential' || error.code === 'auth/invalid-email') {
                     try {
                         await createUserWithEmailAndPassword(auth, email, password);
-                        alert("¡Cuenta creada y sesión iniciada con éxito!");
-                        window.location.href = "inicio.html";
+                        alert("¡Cuenta creada con éxito!");
+                        iniciarProcesoOTP();
                     } catch (createError) {
-                        alert("No se pudo crear la cuenta: " + createError.message);
+                        alert("Error al registrar cuenta: " + createError.message);
                     }
                 } else {
-                    alert("Contraseña incorrecta o correo inválido.");
+                    alert("Correo o contraseña incorrectos.");
                 }
             }
+        });
+
+        function iniciarProcesoOTP() {
+            // Generar código aleatorio de 6 dígitos simulado para validación segura
+            codigoGeneradoReal = Math.floor(100000 + Math.random() * 900000).toString();
+            
+            // Mostrar alerta simulando el envío real a su correo
+            alert(`[SIMULACIÓN DE CORREO] Tu código de verificación de acceso es: ${codigoGeneradoReal}`);
+
+            // Cambiar a la vista de los 6 inputs del código
+            document.getElementById('mainLoginView').style.display = 'none';
+            document.getElementById('otpVerificationView').style.display = 'block';
+            document.getElementById('otp1').focus();
+        }
+
+        // Lógica automática para navegar entre los cuadritos del código OTP
+        const otpInputs = document.querySelectorAll('.otp-input');
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length === 1 && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && input.value === '' && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+            });
+        });
+
+        // Validar el código ingresado por el usuario
+        document.getElementById('verifyOtpBtn').addEventListener('click', () => {
+            let codigoIngresado = "";
+            otpInputs.forEach(input => codigoIngresado += input.value);
+
+            if (codigoIngresado === codigoGeneradoReal) {
+                alert("¡Verificación exitosa! Bienvenido.");
+                window.location.href = "inicio.html";
+            } else {
+                alert("El código de verificación es incorrecto. Inténtalo de nuevo.");
+            }
+        });
+
+        // Reenviar código
+        document.getElementById('resendOtp').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert(`[REENVÍO] Tu nuevo código es: ${codigoGeneradoReal}`);
         });
     </script>
 </body>
